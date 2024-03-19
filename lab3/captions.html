@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трохин Данил Витальевич. Лабораторная 3</title>
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        .citation {
+            border: 1px solid gray;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px black;
+            background: linear-gradient(to right, red, orange, yellow, green,blue, purple);
+        }
+        .text{
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .author {
+            text-align: left;
+            font-size: 30px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-left: 50%;
+        }
+
+        .citation1 {
+            border: 2px solid black;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px;
+            box-shadow: 5px 5px 2px gray;
+            background: linear-gradient(to right, #ff5733, #ffd633, #33ff57);
+        }
+        .text1 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .author1 {
+            text-align: left;
+            font-size: 18px;
+            opacity: 0.8;
+            margin-top: 10px;
+            margin-left: 58%;
+        }
+
+        .citation2 {
+            border: 3px dashed blue;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 15px;
+            box-shadow: 8px 8px 4px #888888;
+            background: linear-gradient(to right, #663399, #ff69b4, #ff8c00);
+        }
+        .text2 {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .author2 {
+            text-align: left;
+            font-size: 20px;
+            opacity: 0.7;
+            margin-top: 20px;
+            margin-left: 42%;
+        }
+
+        .citation3 {
+            border: 1px solid #333;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px;
+            box-shadow: 10px 10px 5px #888888;
+            background: linear-gradient(to right, #ffcc00, #00ccff);
+        }
+        .text3 {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .author3 {
+            text-align: left;
+            font-size: 24px;
+            opacity: 0.9;
+            margin-top: 25px;
+            margin-left: 55%;
+        }
+
+        .citation4 {
+            border: 2px dotted green;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 6px 6px 3px black;
+            background: linear-gradient(to right, #ff6347, #ffd700, #20b2aa);
+        }
+        .text4 {
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .author4 {
+            text-align: left;
+            font-size: 22px;
+            opacity: 0.8;
+            margin-top: 15px;
+            margin-left: 37%;
+        }
+
+        .citation5 {
+            border: 3px solid #800080;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 22px;
+            box-shadow: 7px 7px 4px #555555;
+            background: linear-gradient(to right, #ff4500, #ff1493, #008080);
+        }
+        .text5 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .author5 {
+            text-align: left;
+            font-size: 26px;
+            opacity: 0.7;
+            margin-top: 18px;
+            margin-left: 30%;
+        }
+
+        .citation6 {
+            border: 1px solid #4682b4;
+            padding: 35px;
+            border-radius: 18px;
+            margin: 30px;
+            box-shadow: 12px 12px 6px #333333;
+            background: linear-gradient(to right, #ffff00, #8a2be2, #7fffd4);
+        }
+        .text6 {
+            font-size: 34px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .author6 {
+            text-align: left;
+            font-size: 28px;
+            opacity: 0.9;
+            margin-top: 30px;
+            margin-left: 45%;
+        }
+
+        .citation7 {
+            border: 2px dashed #9932cc;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 25px;
+            box-shadow: 10px 10px 5px #666666;
+            background: linear-gradient(to right, #ff8c00, #00fa9a);
+        }
+        .text7 {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .author7 {
+            text-align: left;
+            font-size: 26px;
+            opacity: 0.8;
+            margin-top: 25px;
+            margin-left: 55%;
+        }
+
+        .citation8 {
+            border: 3px solid #ff4500;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 8px 8px 4px #444444;
+            background: linear-gradient(to right, #ffff00, #00ced1);
+        }
+        .text8 {
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .author8 {
+            text-align: left;
+            font-size: 24px;
+            opacity: 0.8;
+            margin-top: 20px;
+            margin-left: 35%;
+        }
+
+        .citation9 {
+            border: 2px solid #228b22;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 22px;
+            box-shadow: 7px 7px 4px #777777;
+            background: linear-gradient(to right, #9932cc, #008000);
+        }
+        .text9 {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .author9 {
+            text-align: left;
+            font-size: 26px;
+            opacity: 0.7;
+            margin-top: 18px;
+            margin-left: 40%;
+        }
+                
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 3
+    </header> 
+    <main>
+        <div class="citation">
+            <div class="text">Стремитесь не к успеху, а к ценностям, которые он дает.</div>
+            <div class="author">Альберт Эйнштейн</div>
+        </div>
+
+        <div class="citation1">
+            <div class="text1">Когда вы достигаете конца верёвки, завяжите узел и держитесь.</div>
+            <div class="author1">Теодор Рузвельт</div>
+        </div>
+
+        <div class="citation2">
+            <div class="text2">Люди обычно настолько счастливы, насколько решают.</div>
+            <div class="author2">Авраам Линкольн</div>
+        </div>
+
+        <div class="citation3">
+            <div class="text3">Учитесь и читайте. Читайте книги серьёзные. Жизнь сделает остальное.</div>
+            <div class="author3">Фёдор Достоевский</div>
+        </div>
+
+        <div class="citation4">
+            <div class="text4">Успеха может достичь любой. Надо всё время повторять себе эти слова, и успех обязательно придёт.</div>
+            <div class="author4">Джон Леннон</div>
+        </div>
+
+        <div class="citation5">
+            <div class="text5">Начинать всегда стоит с того, что сеет сомнения.</div>
+            <div class="author5">Борис Стругацкий</div>
+        </div>
+
+        <div class="citation6">
+            <div class="text6">Настоящая ответственность бывает только личной.</div>
+            <div class="author6">Фазиль Искандер</div>
+        </div>
+
+        <div class="citation7">
+            <div class="text7">Неосмысленная жизнь не стоит того, чтобы жить.</div>
+            <div class="author7">Сократ</div>
+        </div>
+
+        <div class="citation8">
+            <div class="text8">80% успеха - это появиться в нужном месте в нужное время.</div>
+            <div class="author8">Вуди Аллен</div>
+        </div>
+
+        <div class="citation9">
+            <div class="text9">Ваше время ограничено, не тратьте его, живя чужой жизнью.</div>
+            <div class="author9">Стив Джобс</div>
+        </div>
+    </main>
+    <footer>
+        &copy;Данил Трохин, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
