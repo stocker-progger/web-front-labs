@@ -18,7 +18,30 @@ header, footer {
     font-size: 18px;
 }
 
-a { 
+a {
+    color: rgb(177, 143, 80);
+    text-decoration: none;
+    text-shadow: 4px 3px 3px rgb(190, 161, 111);
+    transition: 1s 2s;
+}
+
+a:link{
+    color: rgb(74, 74, 74);
     text-decoration: none;
 }
 
+a:visited{
+    color: grey;
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+a:active{
+    color: black;
+    opacity: 0.3;
+}
