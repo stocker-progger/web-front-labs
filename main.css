@@ -9,6 +9,7 @@ main {
     color: black; 
     padding: 20px;
     font-size: 16px; 
+    margin: 10px 20px 45px;
 }
 
 header, footer {
@@ -70,4 +71,15 @@ div.menu {
     margin-top: 20px;
     margin-bottom: 10px;
   }
-  
+
+  footer {
+    background-color: black;
+    color: whitesmoke; 
+    padding: 10px;
+    font-size: 16pt;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
