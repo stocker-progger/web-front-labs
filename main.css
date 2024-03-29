@@ -12,7 +12,7 @@ main {
     margin: 10px 20px 45px;
 }
 
-header, footer {
+header {
     background-color: black; 
     color: whitesmoke; 
     padding: 10px;
