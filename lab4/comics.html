@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трохин Данил Витальевич. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <style>
+        .cloud {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px dotted rgb(83, 82, 82);
+            padding: 20px;
+            background-color: whitesmoke;
+            color: #000;
+            box-shadow: 0 0 5px rgb(0, 0, 0);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-container:hover .cloud {
+            opacity: 1;
+        }
+
+        .cloud1 {
+            left: 180px;
+            top: 130px;
+            width: 2%;
+            height: 1%;
+        }
+
+        .cloud2 {
+            left: 220px;
+            top: 100px;
+            width: 4%;
+            height: 4%;
+        }
+
+        .cloud3 {
+            left: 260px;
+            top: 60px;
+            width: 6%;
+            height: 6%;
+        }
+
+        .cloud4 {
+            left: 300px;
+            top: 10px;
+            height: 15%;
+        }
+
+        .cloud1 {
+            transition-delay: 0.1s;
+        }
+
+        .cloud2 {
+            transition-delay: 0.2s;
+        }
+
+        .cloud3 {
+            transition-delay: 0.3s;
+        }
+
+        .cloud4 {
+            transition-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div class="image-container">
+            <img src="wolter.jpg" width="50%">
+            <div class="cloud cloud1"></div>
+            <div class="cloud cloud2"></div>
+            <div class="cloud cloud3"></div>
+            <div class="cloud cloud4">Джесси, нам нужно делать лабу...</div>
+        </div>
+    </main>
+
+    <footer>
+        &copy;Данил Трохин, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
