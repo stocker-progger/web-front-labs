@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина товаров</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+</head>
+<body>
+    <header>
+        <!-- Шапка страницы -->
+        Ваша корзина
+    </header>
+
+    <main>
+        <!-- Форма корзины товаров -->
+        <form id="cartForm">
+            <!-- Товары с указанием цены и количества -->
+            <!-- Пример одного товара: -->
+            <label for="apples">Яблоки (100р/шт):
+                <input type="number" id="apples" min="0" placeholder="сколько яблок надо?" data-price="100">
+            </label><br>
+
+            <!-- Повторите структуру выше для других товаров -->
+
+            <!-- Кнопка рассчитать -->
+            <button type="button" onclick="calculateTotal()">Рассчитать</button>
+            <!-- Кнопка очистить -->
+            <button type="button" onclick="clearCart()">Очистить</button>
+
+            <!-- Место для отображения общей стоимости -->
+            <div id="totalPrice"></div>
+        </form>
+    </main>
+
+    <footer>
+        <!-- Подвал страницы -->
+        &copy;Данил Трохин, ФБИ-21, 2 курс, 2024
+    </footer>
+
+    <script>
+        function calculateTotal() {
+            var total = 0;
+            var inputs = document.querySelectorAll('#cartForm input[type=number]');
+            inputs.forEach(function(input) {
+                var price = input
