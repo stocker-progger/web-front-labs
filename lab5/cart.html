@@ -3,47 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Корзина товаров</title>
+    <title>Трохин Данил Витальевич. Лабораторная 5</title>
     <link rel="stylesheet" href="../main.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon-16x16.png">
-    <link rel="icon" href="favicon-32x32.png">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        .border {
+            width: 320px;
+            height: 600px;
+            border: 7px solid;
+            border-radius: 25px;
+            background-color: white;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .chelka {
+            width: 150px;
+            height: 7px;
+            border: 5px solid;
+            border-radius: 25px;
+            background-color: rgb(0, 0, 0);
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 747px;
+            top: 85px;
+        }
+
+        .product{
+            padding-left: 30px;
+            padding-bottom: 25px;
+        }
+
+        .buttons{
+            padding-left: 30px;
+        }
+
+        h2{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <!-- Шапка страницы -->
-        Ваша корзина
+        НГТУ, ФБ, Лабораторная 5
     </header>
-
     <main>
-        <!-- Форма корзины товаров -->
-        <form id="cartForm">
-            <!-- Товары с указанием цены и количества -->
-            <!-- Пример одного товара: -->
-            <label for="apples">Яблоки (100р/шт):
-                <input type="number" id="apples" min="0" placeholder="сколько яблок надо?" data-price="100">
-            </label><br>
-
-            <!-- Повторите структуру выше для других товаров -->
-
-            <!-- Кнопка рассчитать -->
-            <button type="button" onclick="calculateTotal()">Рассчитать</button>
-            <!-- Кнопка очистить -->
-            <button type="button" onclick="clearCart()">Очистить</button>
-
-            <!-- Место для отображения общей стоимости -->
-            <div id="totalPrice"></div>
-        </form>
+        <div class="border">
+            
+            <div class="chelka"></div>
+            <h2>Корзина товаров</h2>
+            <div class="product">
+                <label>
+                    Наушники (5500р/шт):
+                    <input type="number" placeholder="Введите количество" min="0">
+                </label>
+            </div>
+            <div class="product">
+                <label>
+                    Мышь (1000р/шт):
+                    <input type="number" placeholder="Введите количество" min="0">
+                </label>
+            </div>
+            <div class="product">
+                <label>
+                    Веб-камера (6000р/шт):
+                    <input type="number" placeholder="Введите количество" min="0">
+                </label>
+            </div>
+            <div class="product">
+                <label>
+                    Монитор (2000р/шт):
+                    <input type="number" placeholder="Введите количество" min="0">
+                </label>
+            </div>
+            <div class="product">
+                <label>
+                    Клавиатура (5700р/шт):
+                    <input type="number" placeholder="Введите количество" min="0">
+                </label>
+            </div>
+            <div class="buttons">
+                <input type="button" value="Рассчитать">
+                <input type="button" value="Очистить">
+            </div>
+                <div class="product">
+            </div>
+        </div>
     </main>
 
     <footer>
-        <!-- Подвал страницы -->
-        &copy;Данил Трохин, ФБИ-21, 2 курс, 2024
+        &copy; Артём Тигранян, ФБИ-21, 2 курс, 2024
     </footer>
-
-    <script>
-        function calculateTotal() {
-            var total = 0;
-            var inputs = document.querySelectorAll('#cartForm input[type=number]');
-            inputs.forEach(function(input) {
-                var price = input
+</body>
+</html>
