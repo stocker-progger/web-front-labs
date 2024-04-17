@@ -51,7 +51,7 @@
         }
 
         function huerotateChange(){
-            let value = document.getElementById('hue-rotateValue').value + 'deg';
+            let value = document.getElementById('hue-rotateValue').value + '%';
             document.getElementById('hue-rotateOutput').innerText = value;
             document.getElementById('hue-rotateImage').style.filter = 'hue-rotate(' + value + ')';
         }
