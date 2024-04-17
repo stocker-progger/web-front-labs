@@ -10,11 +10,11 @@
     <link rel="icon" href="../favicon-32x32.png">
     <script>
         function showSum() {
-            let headphones = parseInt(document.getElementById('headphones').value || 0) * 5500;
-            let phonecase = parseInt(document.getElementById('phonecase').value || 0) * 1000;
-            let powerbank = parseInt(document.getElementById('powerbank').value || 0) * 6000;
-            let charger = parseInt(document.getElementById('charger').value || 0) * 2000;
-            let speaker = parseInt(document.getElementById('speaker').value || 0) * 5700;
+            let headphones = parseInt(document.getElementById('headphones').value || 0) * 5000;
+            let phonecase = parseInt(document.getElementById('phonecase').value || 0) * 800;
+            let powerbank = parseInt(document.getElementById('powerbank').value || 0) * 3000;
+            let charger = parseInt(document.getElementById('charger').value || 0) * 2500;
+            let speaker = parseInt(document.getElementById('speaker').value || 0) * 5400;
             let result = headphones + phonecase + powerbank + charger + speaker;
             document.getElementById('totalPrice').textContent = 'Общая цена: ' + result + ' руб.';
         }

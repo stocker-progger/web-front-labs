@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трохин Данил Витальевич. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function Return() {
+        document.querySelectorAll('.circle').forEach(function(circle) {
+            circle.style.borderRadius = '50%';
+            circle.style.opacity = '1';
+            circle.style.width = '100px';
+            circle.style.height = '100px';
+            circle.style.transition = '0.5s';
+        });
+        }
+
+        function kill(circle) {
+            circle.style.opacity = '0';
+            circle.style.width = '0px';
+            circle.style.height = '0px';
+            circle.style.transition = '0.5s';
+        }
+    </script>
+    <style>
+        .circle {
+            border-radius: 50%;
+            border: 2px solid rgb(0, 0, 0);
+            position: absolute; 
+            font-size: 50px;
+            color: #ffffff;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100px;
+            transition:  0.5s;
+            opacity: 1; 
+        }
+
+        .circle1 {
+            left: 300px;
+            top: 130px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .circle2 {
+            left: 600px;
+            top: 290px;
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+
+        .circle3 {
+            left: 78px;
+            top: 497px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(114, 121, 114);
+        }
+        .circle4 {
+            left: 321px;
+            top: 240px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 125, 125);
+        }
+        .circle5 {
+            left: 564px;
+            top: 183px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(0, 72, 255);
+        }
+        .circle6 {
+            left: 163px;
+            top: 432px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(229, 124, 5);
+        }
+        .circle7 {
+            left: 223px;
+            top: 321px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(246, 255, 0);
+        }
+        .circle8 {
+            left: 347px;
+            top: 521px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(128, 0, 100);
+        }
+        .circle9 {
+            left: 69px;
+            top: 340px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(30, 0, 128);
+        }
+        .circle10 {
+            left: 12px;
+            top: 174px;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(0, 124, 128);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная 5
+    </header>
+    <main>
+        <div class="circle circle1" onclick="kill(this)">1</div>
+        <div class="circle circle2" onclick="kill(this)">2</div>
+        <div class="circle circle3" onclick="kill(this)">3</div>
+        <div class="circle circle4" onclick="kill(this)">4</div>
+        <div class="circle circle5" onclick="kill(this)">5</div>
+        <div class="circle circle6" onclick="kill(this)">6</div>
+        <div class="circle circle7" onclick="kill(this)">7</div>
+        <div class="circle circle8" onclick="kill(this)">8</div>
+        <div class="circle circle9" onclick="kill(this)">9</div>
+        <div class="circle circle10" onclick="kill(this)">10</div>
+        <div class="buttons">
+            <input type="button" value="Вернуть" onclick="Return()">
+        </div>
+    </main>
+
+    <footer>
+        &copy; Данил Трохин, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
