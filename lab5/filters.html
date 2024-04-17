@@ -108,7 +108,14 @@
             </div>
             <div><img src="wolter.jpg" id="grayscaleImage"></div>
         </div>
-
+        <div class="block">
+            <div>
+                Фильтр Hue-rotate:
+                <input type="range" min="0" max="360" value="0" onchange="huerotateChange()" id="hue-rotateValue">
+                <span id="hue-rotateOutput"></span>
+            </div>
+            <div><img src="wolter.jpg" id="hue-rotateImage"></div>
+        </div>
         <div class="block">
             <div>
                 Фильтр Invert:
@@ -134,15 +141,6 @@
                 <span id="sepiaOutput"></span>
             </div>
             <div><img src="wolter.jpg" id="sepiaImage"></div>
-        </div>
-
-        <div class="block">
-            <div>
-                Фильтр Hue-rotate:
-                <input type="range" min="0" max="360" value="0" onchange="huerotateChange()" id="hue-rotateValue">
-                <span id="hue-rotateOutput"></span>
-            </div>
-            <div><img src="wolter.jpg" id="hue-rotateImage"></div>
         </div>
     </main>
 
