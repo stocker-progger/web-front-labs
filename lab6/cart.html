@@ -9,4 +9,126 @@
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
     <style>
-        
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+        th {
+            text-align: left;
+        }
+        input {
+            width: 60px;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <label for="balance">Мой баланс:</label>
+        <input type="number" id="balance" value="100"><br><br>
+        <table>
+            <tr>
+                <th>Название</th>
+                <th>Цена</th>
+                <th>Количество</th>
+            </tr>
+            <tr>
+                <td>Молоко</td>
+                <td>90 р</td>
+                <td><input type="number" id="milk" ></td>
+            </tr>
+            <tr>
+                <td>Хлеб белый</td>
+                <td>50 р</td>
+                <td><input type="number" id="bread" ></td>
+            </tr>
+            <tr>
+                <td>Масло, 200 гр</td>
+                <td>150 р</td>
+                <td><input type="number" id="butter"></td>
+            </tr>
+            <tr>
+                <td>Яблоки</td>
+                <td>30 р</td>
+                <td><input type="number" id="apple" ></td>
+            </tr>
+            <tr>
+                <td>Сыр</td>
+                <td>200 р</td>
+                <td><input type="number" id="cheese" ></td>
+            </tr>
+            <tr>
+                <td>Курица</td>
+                <td>300 р</td>
+                <td><input type="number" id="chicken" ></td>
+            </tr>
+            <tr>
+                <td>Рыба</td>
+                <td>250 р</td>
+                <td><input type="number" id="fish" ></td>
+            </tr>
+        </table><br>
+        <button onclick="calculateTotal()">ОК</button>
+        <div id="message"></div>
+    </main>
+    </body>
+        <script>
+            function calculateTotal() {
+                let milk = document.getElementById("milk");
+                let bread = document.getElementById("bread");
+                let butter = document.getElementById("butter");
+                let apple = document.getElementById("apple");
+                let cheese = document.getElementById("cheese");
+                let chicken = document.getElementById("chicken");
+                let fish = document.getElementById("fish");
+                let a = parseInt(milk.value) || 0;
+                let b = parseInt(bread.value) || 0;
+                let c = parseInt(butter.value) || 0;
+                let d = parseInt(apple.value) || 0;
+                let e = parseInt(cheese.value) || 0;
+                let f = parseInt(chicken.value) || 0;
+                let g = parseInt(fish.value) || 0;
+                let total = a * 90 + b * 50 + c * 150 + d * 30 + e * 200 + f * 300 + g * 250;
+                let balance = document.getElementById('balance').value;
+
+                if (a < 0 || b < 0 || c < 0 || d < 0 || e < 0 || f < 0 || g < 0) {
+                    document.getElementById('message').innerHTML = 'Значения не могут быть отрицательными!';
+                    document.getElementById('message').className = 'error';
+                }
+
+                else if (milk.value == "" && bread.value == "" && butter.value == "" && apple.value == "" && cheese.value == "" && chicken.value == "" && fish.value == "") {
+                    document.getElementById('message').innerHTML = 'Выберите хотя бы один товар!';
+                    document.getElementById('message').className = 'error';
+                }
+
+                else if (total > balance) {
+                    empty = false
+                    document.getElementById('message').innerHTML = 'Итого: ' + total + ' р. У вас недостаточно денег!';
+                    document.getElementById('message').className = 'error';
+                
+                }
+
+                else {
+                    empty = false
+                    document.getElementById('message').innerHTML = 'Покупка успешно оформлена на сумму: ' + total + ' р.';
+                    document.getElementById('message').className = 'success';
+                }
+            }
+        </script>
+    <footer>
+        &copy; Данил Трохин, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
