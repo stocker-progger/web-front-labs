@@ -8,6 +8,11 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        #numberInput {
+        width: 190px; 
+    }
+    </style>
     <script>
         function addNewBlock() {
             let newBlock = document.createElement('div');
@@ -48,7 +53,7 @@
                 newBlock.style.padding = "5px"; 
                 newBlock.style.width = "40px";
                 newBlock.style.color = "white";
-                newBlock.innerHTML = `${i}`;
+                newBlock.innerText = i;
 
                 main.appendChild(newBlock);
             }
@@ -68,7 +73,7 @@
                 circle.style.color = "white";
                 circle.style.display = "inline-block";
                 circle.style.textAlign = "center";
-                circle.innerHTML = `${i}`;
+                circle.innerText = i;
 
                 main.appendChild(circle);
             }
@@ -85,12 +90,36 @@
                 newBlockopacity.style.padding = "5px"; 
                 newBlockopacity.style.width = "40px";
                 newBlockopacity.style.opacity = i * 0.1;
-                newBlockopacity.innerHTML = `${i}`;
+                newBlockopacity.innerText = i;
 
                 main.appendChild(newBlockopacity);
             }
         }
 
+        function generateCircles() {
+            let main = document.querySelector('main');
+            const count = parseInt(document.getElementById('numberInput').value);
+            for (let i = count; i > 0; i--) {
+                let newCircle = document.createElement('div');
+                newCircle.style.height = "20px";
+                newCircle.style.border = "2px solid grey";
+                newCircle.style.borderRadius = "50%"; 
+                newCircle.style.margin = "15px"; 
+                newCircle.style.padding = "5px"; 
+                newCircle.style.width = "20px";
+                newCircle.style.color = "white";
+                newCircle.style.display = "inline-block";
+                newCircle.style.textAlign = "center";
+                newCircle.innerText = i;
+                if(i % 2 === 0) {
+                    newCircle.style.backgroundColor = "Green";
+                }
+                else {
+                    newCircle.style.backgroundColor = "Red"
+                }
+                main.appendChild(newCircle);
+            }
+        }
     </script>
 </head>
 <body>
@@ -99,6 +128,8 @@
     </header>
 
     <main>
+        <input type="number" id="numberInput" min = "0" placeholder="Введите количество кругов">
+        <button onclick="generateCircles()">Цветные круги</button><br><br>
         <button onclick="addNewBlock()">Добавить блок</button>
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20 => 50</button>
