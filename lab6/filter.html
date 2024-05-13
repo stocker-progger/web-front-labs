@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трохин Данил Витальевич. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <style>
+        img {
+            height: 600px;
+        }
+        .wear {
+            text-align: center;
+            line-height: 35px;
+            color: rgb(0, 0, 0);
+            width: 700px;
+            padding: 30px;
+            margin: 20px auto;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+        #wear-color {
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+        }
+        #wear-type {
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+        }
+        button {
+            font-size: 15px;
+        }
+    </style>
+    <script>
+        function filter() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear= document.getElementById('wear');
+
+            if(color == 'Белый' && type == 'Футболка') {
+                wear.src = "wt.jpg"
+            }
+            else if(color == 'Черный' && type == 'Футболка') {
+                wear.src = "bt.jpg"
+            }
+            else if(color == 'Желтый' && type == 'Футболка') {
+                wear.src = "yt.jpg"
+            }
+            else if(color == 'Белый' && type == 'Куртка') {
+                wear.src = "wj.jpg"
+            }
+            else if(color == 'Черный' && type == 'Куртка') {
+                wear.src = "bj.jpg"
+            }
+            else if(color == 'Желтый' && type == 'Куртка') {
+                wear.src = "yj.jpg"
+            }
+            else if(color == 'Белый' && type == 'Джинсы') {
+                wear.src = "wje.jpg"
+            }
+            else if(color == 'Черный' && type == 'Джинсы') {
+                wear.src = "bje.jpeg"
+            }
+            else {
+                wear.src = "blackk.jpg"
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="wear">
+            Цвет одежды:
+            <select id="wear-color">
+                <option>Белый</option>
+                <option>Черный</option>
+                <option>Желтый</option>
+            </select><br>
+
+            Тип одежды:
+            <select id="wear-type">
+                <option>Футболка</option>
+                <option>Куртка</option>
+                <option>Джинсы</option>
+            </select><br>
+
+            <button onclick="filter()">Выбрать!</button><br>
+            <img id="wear">
+        </div>
+    </main>
+       
+    <footer>
+        &copy; Данил Трохин, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
