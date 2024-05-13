@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трохин Данил Витальевич. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <style>
+            .color {
+            color: rgb(255, 86, 86);
+            background-color: rgb(161, 6, 6);
+            border: 3px solid rgb(255, 0, 0);
+            border-radius: 10px;
+            text-align: center;
+            margin: auto;
+            width: 300px;
+            padding: 10px;
+            line-height: 30px;
+            font-size: 18px;
+            transition: 1.2s;
+        }
+    </style>
+    <script>
+        function changeColor(div) {
+        if (div.style.backgroundColor == 'rgb(161, 6, 6)') {
+            div.style.backgroundColor = 'rgb(166, 207, 150)';
+            div.style.border = '3px solid rgb(0, 175, 44)';
+            div.style.color = 'rgb(1, 161, 14)';
+            document.getElementById('color-name').innerHTML = 'Зелёный';
+        }
+        else if (div.style.backgroundColor == 'rgb(166, 207, 150)') {
+            div.style.backgroundColor = 'rgb(221, 134, 182)';
+            div.style.border = '3px solid rgb(204, 0, 126)';
+            div.style.color = 'rgb(161, 1, 108)';
+            document.getElementById('color-name').innerHTML = 'Розовый';
+        }
+        else if (div.style.backgroundColor == 'rgb(221, 134, 182)') {
+            div.style.backgroundColor = 'rgb(218, 188, 125)';
+            div.style.border = '3px solid rgb(204, 122, 0)';
+            div.style.color = 'rgb(161, 97, 1)';
+            document.getElementById('color-name').innerHTML = 'Оранжевый';
+        }
+        else if (div.style.backgroundColor == 'rgb(218, 188, 125)') {
+            div.style.backgroundColor = 'rgb(193, 146, 207)';
+            div.style.border = '3px solid rgb(134, 0, 175)';
+            div.style.color = 'rgb(110, 1, 161)';
+            document.getElementById('color-name').innerHTML = 'Фиолетовый';
+        }
+        else {
+            div.style.backgroundColor = 'rgb(161, 6, 6)';
+            div.style.border = '3px solid rgb(255, 0, 0)';
+            div.style.color = 'rgb(255, 86, 86)';
+            document.getElementById('color-name').innerHTML = 'Красный';
+        }
+    }
+
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="color" ondblclick="changeColor(this)">
+            Цвет: <span id="color-name">Красный</span><br>
+            Сделайте двойной щелчок, чтобы сменить
+        </div>
+    </main>
+       
+    <footer>
+        &copy; Трохин Данил, ФБИ-21, 2 курс, 2024
+    </footer>
+</body>
+</html>
