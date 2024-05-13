@@ -110,6 +110,18 @@
             document.getElementById('result').innerHTML = '';
             document.getElementById('user-number').value = '';
         }
+        function Rules() {
+            let screen = document.getElementsByClassName('rules');
+            if(screen[2].style.display == 'none') {
+                screen[0].style.display = 'none';
+                screen[1].style.display = 'block';
+                screen[2].style.display = 'block'
+            } else {
+                screen[0].style.display = 'block';
+                screen[1].style.display = 'none';
+                screen[2].style.display = 'none'
+            }
+        }
     </script>
 </head>
 <body>
@@ -151,6 +163,24 @@
             </div>
         </div>
 
+        <div class="game">
+            <div class="rules">
+                <button class="button1" onclick="Rules()">Показать правила игры</button>
+            </div>
+            <div class="rules" style="display: none;">
+                <button class="button1" onclick="Rules()">Скрыть правила игры</button>
+            </div>
+            <div class="rules" style="display: none;">
+                <ul class="list"> 
+                    <li>Нажмите на "сыграть в игру"</li>
+                    <li>Вводите числа строго не меньше 1</li>
+                    <li>Вводите числа строго не больше 100</li>
+                    <li>Введите число, соответствующее правилам B и C</li>
+                    <li>Следуйте подсказкам</li>
+                    <li>Пробуйте, пока не отгадаете загаданное число</li>
+                </ul>
+            </div>
+        </div>
     </main>
 </head>
     <footer>
