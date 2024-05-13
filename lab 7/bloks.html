@@ -72,7 +72,25 @@
 
                 main.appendChild(circle);
             }
-        } 
+        }
+        
+        function addNewBlocksopacity() {
+            let main = document.querySelector('main');
+            for (let i = 0; i < 11; i++) {
+                let newBlockopacity = document.createElement('div');
+                newBlockopacity.style.backgroundColor = "Grey";
+                newBlockopacity.style.height = "40px";
+                newBlockopacity.style.border = "2px solid black"; 
+                newBlockopacity.style.margin = "10px"; 
+                newBlockopacity.style.padding = "5px"; 
+                newBlockopacity.style.width = "40px";
+                newBlockopacity.style.opacity = i * 0.1;
+                newBlockopacity.innerHTML = `${i}`;
+
+                main.appendChild(newBlockopacity);
+            }
+        }
+
     </script>
 </head>
 <body>
@@ -85,6 +103,7 @@
         <button onclick="addNewBlocks()">Добавить блоки</button>
         <button onclick="add20_50()">20 => 50</button>
         <button onclick="add20_50()">10 => -80</button>
+        <button onclick="addNewBlocksopacity()">0% => 100%</button>
     </main>
 
     <footer>
