@@ -8,18 +8,27 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="../favicon-16x16.png">
     <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function addNewBlock() {
+            let newBlock = document.createElement('div');
+            newBlock.style.backgroundColor = "Grey";
+            newBlock.style.height = "40px";
+            newBlock.style.border = "2px solid black"; 
+            newBlock.style.margin = "10px"; 
+            newBlock.style.padding = "5px"; 
+            newBlock.style.width = "95%"; 
+
+            document.querySelector('main').appendChild(newBlock);
+        }
+    </script>
 </head>
 <body>
     <header onclick="showAuthor()">
-        НГТУ, ФБ, Лабораторная работа 6
+        НГТУ, ФБ, Лабораторная работа 7
     </header>
 
     <main>
-        <ul>
-            <li>
-                
-            </li>
-        </ul>
+        <button onclick="addNewBlock()">Добавить блок</button>
     </main>
 
     <footer>
