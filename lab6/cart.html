@@ -113,6 +113,11 @@
                     document.getElementById('message').className = 'error';
                 }
 
+                else if (milk.value == 0 && bread.value == 0 && butter.value == 0 && apple.value == 0 && cheese.value == 0 && chicken.value == 0 && fish.value == 0) {
+                    document.getElementById('message').innerHTML = 'Выберите хотя бы один товар!';
+                    document.getElementById('message').className = 'error';
+                }
+
                 else if (total > balance) {
                     empty = false
                     document.getElementById('message').innerHTML = 'Итого: ' + total + ' р. У вас недостаточно денег!';
