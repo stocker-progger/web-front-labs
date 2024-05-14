@@ -11,28 +11,25 @@
     <style>
         #exchange-info {
             margin-top: 20px;
-            border: 1px solid #ffffff;
+            border: 1px solid #ccc;
             padding: 10px;
-            background-color: #d4d4d4;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
         }
         .value {
-            margin-top: 5px;
             font-size: 18px;
-            color: #343434;
+            color: #333;
         }
         .date {
-            margin-top: 5px;
             font-size: 14px;
-            color: #935252;
+            color: #666;
         }
         .difference {
-            margin-top: 5px;
             font-size: 16px;
-            color: #b40000;
+            color: #008000;
         }
-
         .source-link {
-            margin-top: 5px;
+            margin-top: 10px;
             font-size: 14px;
         }
         
@@ -52,7 +49,7 @@
                         <div class="date">Дата запроса: ${json.Date.substring(0, 10)}</div>
                         <div class="value">Курс за прошлую дату: ${json.Valute.EUR.Previous} руб.</div>
                         <div class="difference">Курс евро ${change} на ${Math.abs(difference).toFixed(2)} руб. по сравнению с предыдущим днём.
-                        <div class="source-link"><a href="https://www.cbr-xml-daily.ru/" target="_blank">Источник данных</a></div>`;
+                        <div class="source-link"><a href="https://www.cbr-xml-daily.ru/">Источник данных</a></div>`;
                 })
         }
     </script>
