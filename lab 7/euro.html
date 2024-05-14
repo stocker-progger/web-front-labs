@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трохин Данил Витальевич. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        #exchange-info {
+            margin-top: 20px;
+            border: 1px solid #ffffff;
+            padding: 10px;
+            background-color: #d4d4d4;
+        }
+        .value {
+            margin-top: 5px;
+            font-size: 18px;
+            color: #343434;
+        }
+        .date {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #935252;
+        }
+        .difference {
+            margin-top: 5px;
+            font-size: 16px;
+            color: #b40000;
+        }
+
+        .source-link {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        
+    </style>
+    <script>
+        function getEuroExchangeRate(){
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json){
+                    const exchangeInfo = document.getElementById('exchange-info');
+                    const difference = json.Valute.EUR.Value - json.Valute.EUR.Previous;
+                    const change = difference > 0 ? "поднялся" : "опустился";
+                    exchangeInfo.innerHTML = `<div class="value">Текущий курс Евро: ${json.Valute.EUR.Value} руб.</div>
+                        <div class="date">Дата запроса: ${json.Date.substring(0, 10)}</div>
+                        <div class="value">Курс за прошлую дату: ${json.Valute.EUR.Previous} руб.</div>
+                        <div class="difference">Курс евро ${change} на ${Math.abs(difference).toFixed(2)} руб. по сравнению с предыдущим днём.
+                        <div class="source-link"><a href="https://www.cbr-xml-daily.ru/" target="_blank">Источник данных</a></div>`;
+                })
+        }
+    </script>
+</head>
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <button id="exchangeInfo" onclick="getEuroExchangeRate()">Курс Евро</button>
+        <div id="exchange-info"></div>
+    </main>
+
+    <footer>
+        &copy;Данил Трохин, ФБИ-21, 2 курс, 2024
+    </footer>
+
+</body>
+</html>
