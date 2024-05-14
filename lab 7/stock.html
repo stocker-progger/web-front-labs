@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трохин Данил Витальевич. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            padding: 1px;
+            text-align: left;
+        }
+    </style>
+</head>
+    <script>
+        function showStock() {
+            const prices = [7.37, 7.34, 7.33, 7.34, 7.37, 7.42, 7.41, 7.44, 7.48, 7.46];
+            const dates = ["13.05.2024", "10.05.2024", "08.05.2024", "07.05.2024", "06.05.2024", "03.05.2024", "02.05.2024", "30.04.2024", "29.04.2024", "26.04.2024"];
+            let table = document.getElementById('StockPrice');
+            table.style.display = "table";
+
+            let sum = 0;
+            let max = prices[0];
+            let min = prices[0];
+
+            for (let i = 0; i < prices.length; i++) {
+                let tr = document.createElement('tr');
+                let tdDate = document.createElement('td');
+                let tdPrice = document.createElement('td');
+                let tdDiff = document.createElement('td');
+
+                tdDate.innerText = dates[i];
+                tdPrice.innerText = prices[i];
+                
+                if (i === 0) {
+                    tdDiff.innerText = "-";
+                } else {
+                    let difference = (prices[i] - prices[i - 1]).toFixed(2);
+                    tdDiff.innerText = difference;
+                }
+
+                tr.appendChild(tdDate);
+                tr.appendChild(tdPrice);
+                tr.appendChild(tdDiff);
+                table.appendChild(tr);
+
+                sum += prices[i];
+                if (prices[i] > max) max = prices[i];
+                if (prices[i] < min) min = prices[i];
+            }
+
+            let avg = (sum / prices.length).toFixed(2);
+            document.getElementById('stats').innerHTML = `
+                Среднее значение стоимости акции: ${avg} руб.<br>
+                Максимальное значение: ${max} руб.<br>
+                Минимальное значение: ${min} руб.`;
+        }
+
+    </script>
+
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="showStock()">Курс акций МКБ</button><br><br>
+        <table id="StockPrice" style="display:none;">
+            <tr>
+                <th>Дата</th>
+                <th>Цена акций</th>
+                <th>Разница</th>
+            </tr>
+        </table>
+        <div id="stats"></div>
+    </main>
+
+    <footer>
+        &copy; Данил Трохин, ФБИ-21, 2 курс, 2024
+    </footer>
+
+</body>
+</html>
