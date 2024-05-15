@@ -27,53 +27,49 @@
         let number;
         let count = 0;
         function startGame() {
-            number = Math.floor(Math.random()*100)+1;
+            number = Math.floor(Math.random() * 100) + 1;
             let screens = document.getElementsByClassName('game');
             screens[0].style.display = 'none';
             screens[1].style.display = 'block';
+            screens[2].style.display = 'none';
         }
         function guess() {
             let input = document.getElementById('user-number');
             let userNumber = parseInt(input.value);
             let message = document.getElementById('result');
-            if(isNaN(userNumber)) {
+            if (isNaN(userNumber)) {
                 message.innerHTML = 'Вы не ввели число';
-            } 
-            else if(userNumber > 100) {
+            } else if (userNumber > 100) {
                 message.innerHTML = 'Число больше 100';
-            }
-            else if(userNumber < 1) {
+            } else if (userNumber < 1) {
                 message.innerHTML = 'Число меньше 1';
-            }
-            else {
+            } else {
                 count++;
-                if(userNumber > number) {
+                if (userNumber > number) {
                     message.innerHTML = 'Вы ввели слишком большое число';
-                }
-                else if(userNumber < number) {
+                } else if (userNumber < number) {
                     message.innerHTML = 'Вы ввели слишком маленькое число';
-                }
-                else {
+                } else {
                     let screens = document.getElementsByClassName('game');
+                    screens[1].style.display = 'none';
                     screens[2].style.display = 'block';
-                    screens[3].style.display = 'none';
                     document.getElementById('number').innerHTML = number;
                     document.getElementById('try-count').innerHTML = count;
                 }
             }
-        }   
-        function again(params) {
+        }
+        function again() {
             let screens = document.getElementsByClassName('game');
+            screens[0].style.display = 'none';
             screens[1].style.display = 'block';
-            screens[2].style.display = 'none';
-            number = Math.floor(Math.random()*100)+1;
-            count = 0; 
+            number = Math.floor(Math.random() * 100) + 1;
+            count = 0;
             document.getElementById('result').innerHTML = '';
             document.getElementById('user-number').value = '';
         }
         function Rules() {
             let screen = document.getElementsByClassName('rules');
-            if(screen[2].style.display == 'none') {
+            if (screen[2].style.display == 'none') {
                 screen[0].style.display = 'none';
                 screen[1].style.display = 'block';
                 screen[2].style.display = 'block'
@@ -106,7 +102,7 @@
                 <div class="text">
                     <input type="number" value="" min="1" max="100" id="user-number"><br><br>
                 </div>
-                <button onclick="guess()" >Угадать</button>
+                <button onclick="guess()">Угадать</button>
                 <div id="result"></div>
             </div>
         </div>
@@ -133,9 +129,9 @@
             </div>
             <div class="rules" style="display: none;">
                 <ol class="list"> 
-                    <li>Нажмите на "сыграть в игру"</li>
-                    <li>Вводите числа строго не меньше 1</li>
-                    <li>Вводите числа строго не больше 100</li>
+                    <li>Нажмите на кнопку "Сыграть в игру"</li>
+                    <li>Вводите числа не меньше 1</li>
+                    <li>Вводите числа не больше 100</li>
                     <li>Введите число, соответствующее правилам 2 и 3</li>
                     <li>Следуйте подсказкам</li>
                     <li>Пробуйте, пока не отгадаете загаданное число</li>
@@ -143,10 +139,8 @@
             </div>
         </div>
     </main>
-</head>
     <footer>
         &copy;Данил Трохин, ФБИ-21, 2 курс, 2024
     </footer>
-
 </body>
 </html>
