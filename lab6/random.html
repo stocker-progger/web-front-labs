@@ -69,14 +69,12 @@
         }
         function Rules() {
             let screen = document.getElementsByClassName('rules');
-            if (screen[2].style.display == 'none') {
+            if (screen[1].style.display == 'none') {
                 screen[0].style.display = 'none';
                 screen[1].style.display = 'block';
-                screen[2].style.display = 'block'
             } else {
                 screen[0].style.display = 'block';
                 screen[1].style.display = 'none';
-                screen[2].style.display = 'none'
             }
         }
     </script>
@@ -126,8 +124,6 @@
             </div>
             <div class="rules" style="display: none;">
                 <button onclick="Rules()">Скрыть правила игры</button>
-            </div>
-            <div class="rules" style="display: none;">
                 <ol class="list"> 
                     <li>Нажмите на кнопку "Сыграть в игру"</li>
                     <li>Вводите числа не меньше 1</li>
