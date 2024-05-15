@@ -43,7 +43,12 @@
                 .then(function(json){
                     const exchangeInfo = document.getElementById('exchange-info');
                     const difference = json.Valute.EUR.Value - json.Valute.EUR.Previous;
-                    const change = difference > 0 ? "поднялся" : "опустился";
+                    const change = ''
+                    if (difference > 0) {
+                        const change = 'поднялся'
+                    } else {
+                        const change = 'опустился'
+                    }
                     exchangeInfo.innerHTML = `<div class="value">Текущий курс Евро: ${json.Valute.EUR.Value} руб.</div>
                         <div class="date">Дата запроса: ${json.Date.substring(0, 10)}</div>
                         <div class="value">Курс за прошлую дату: ${json.Valute.EUR.Previous} руб.</div>
