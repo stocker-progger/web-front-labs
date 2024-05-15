@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Трохин Данил Витальевич. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <script>
+        function getWeather(){
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {
+                    const weatherInfo = document.getElementById('weather-Info');
+                    const times = json.hourly.time;
+                    const temperatures = json.hourly.temperature_2m;
+
+                    const today = new Date().toISOString().split('T')[0];
+
+                    const indices = {
+                        '08:00': times.findIndex(time => time === `${today}T08:00`),
+                        '12:00': times.findIndex(time => time === `${today}T12:00`),
+                        '20:00': times.findIndex(time => time === `${today}T20:00`)
+                    };
+
+                    weatherInfo.innerHTML = `
+                        <div>Температура в Новосибирске сегодня в 08:00: ${temperatures[indices['08:00']]}°C</div>
+                        <div>Температура в Новосибирске сегодня в 12:00: ${temperatures[indices['12:00']]}°C</div>
+                        <div>Температура в Новосибирске сегодня в 20:00: ${temperatures[indices['20:00']]}°C</div>
+                    `;
+                })
+        }
+    </script>
+</head>
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <button id="weatherInfo" onclick="getWeather()">Прогноз погоды</button>
+        <div id="weather-Info"></div>
+    </main>
+
+    <footer>
+        &copy;Данил Трохин, ФБИ-21, 2 курс, 2024
+    </footer>
+
+</body>
+</html>
