@@ -68,7 +68,6 @@
             let screens = document.getElementsByClassName('game');
             screens[0].style.display = 'none';
             screens[1].style.display = 'block';
-            screens[3].style.display = 'none';
         }
         function guess() {
             let input = document.getElementById('user-number');
@@ -93,7 +92,6 @@
                 }
                 else {
                     let screens = document.getElementsByClassName('game');
-                    screens[1].style.display = 'none';
                     screens[2].style.display = 'block';
                     screens[3].style.display = 'none';
                     document.getElementById('number').innerHTML = number;
