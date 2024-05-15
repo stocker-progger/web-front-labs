@@ -19,45 +19,11 @@
             margin: 20px auto;
             text-align: center;
         }
-        .text {
-            padding: 7px;
-            font-size: 18px;
-            color: rgb(0, 0, 0);
-        }
-        .button {
-            padding: 7px;
-            margin-top: 5px;
-            font-size: 18px;
-            color: rgb(255, 255, 255);
-            border: 1px solid rgb(0, 0, 0);
-            border-radius: 10px;
-            background-color: rgb(0, 0, 0)
-        }
-        .button1 {
-            padding: 7px;
-            font-size: 18px;
-            color: rgb(0, 0, 0);
-            border: rgba(0, 0, 0, 0);
-            border-radius: 10px;
-            background-color: rgba(0, 0, 0, 0);
-            font-weight: bold;
-        }
-        .button2 {
-            padding: 7px;
-            font-size: 18px;
-            color: rgb(255, 255, 255);
-            border: 1px solid rgb(0, 0, 0);
-            border-radius: 10px;
-            background-color: rgb(73, 73, 73);
-            margin-bottom: 5px;
-            box-shadow: 0 0 7px rgba(76, 76, 76, 0.637);
-        }
         #result {
             margin-top: 15px;
         }
         .list {
             text-align: left;
-            line-height: 22px;
         }
     </style>
     <script>
@@ -129,7 +95,7 @@
 
     <main>
         <div class="game">
-            <button class="button1" onclick="startGame()">
+            <button onclick="startGame()">
                 Сыграть в игру
             </button>
         </div>
@@ -138,12 +104,12 @@
             <h1>Угадай число!</h1>
             <div class="text">
                 <div class="text">
-                    Задумано число от 1 до 100. Угадайте, какое?<br>
+                    Задумано число от 1 до 100. Угадайте, какое?<br><br>
                 </div>
                 <div class="text">
-                    <input type="number" value="" min="1" max="100" id="user-number" class="button2"><br>
+                    <input type="number" value="" min="1" max="100" id="user-number"><br><br>
                 </div>
-                <button onclick="guess()" class="button">Угадать</button>
+                <button onclick="guess()" >Угадать</button>
                 <div id="result"></div>
             </div>
         </div>
@@ -157,16 +123,16 @@
                 Количество попыток: <span id="try-count"></span>
             </div>
             <div class="text">
-                <button class="button" onclick="again()">Сыграть ещё раз</button>
+                <button onclick="again()">Сыграть ещё раз</button>
             </div>
         </div>
 
         <div class="game">
             <div class="rules">
-                <button class="button1" onclick="Rules()">Показать правила игры</button>
+                <button onclick="Rules()">Показать правила игры</button>
             </div>
             <div class="rules" style="display: none;">
-                <button class="button1" onclick="Rules()">Скрыть правила игры</button>
+                <button onclick="Rules()">Скрыть правила игры</button>
             </div>
             <div class="rules" style="display: none;">
                 <ul class="list"> 
